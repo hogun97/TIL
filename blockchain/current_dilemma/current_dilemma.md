@@ -2,10 +2,10 @@
 
 1. Speed
 Many blockchains today emphasize their technological superiority by exaggerating their TPS (transaction per second). However, speed of transaction is determined by two factors: TPS and Finality. 
-  - TPS is quite self-explanatory. 
-  - Finality is how long it takes to confirm the transaction. 
+  - TPS is quite self-explanatory - transactions processed in a second
+  - Finality is how long it takes to confirm a transaction. 
 
-In Bitcoin, it takes 10 minutes to finalize a block.
+In Bitcoin, it takes approximately 10 minutes to create a new block.
 
 In Ethereum, Buterin has announced that finality never exists in a Proof of Work setting. Therefore, he made a probabilistic approach to finality - with 6 confirmations, it is very likely that the block will be finalized and thus it is safe to assume that the transaction is valid. 
 
