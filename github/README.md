@@ -2,4 +2,5 @@
 
 ## Contents
 
-- Generating a new SSH key 
+- Generating a new SSH key
+- Forking a project and syncing with upstream 
