@@ -31,7 +31,7 @@ For example, having 4 or 5 nodes on the network makes no difference in terms of 
 
 ## PBFT Consensus Process
 
-1. Client requests ocnfirmation for the current state of the blockchain and the participating nodes.
+1. Client requests confirmation for the current state of the blockchain and the participating nodes.
 2. Primary node (selected among all nodes) collects all transaction data from the client.
 3. Primary node creates a new block with all the given transactions and broadcasts the replica of that block to all other nodes.
 4. All nodes receive the replica from the primary node and broadcast to other nodes to confirm that they have received the replica.
