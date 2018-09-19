@@ -20,5 +20,3 @@ commits made in that branch. All the commits in the feature branch will be
 rebased in front of the master branch. Likewise, rebasing the feature branch
 will update the entire branch to the state displayed in master branch.
 
-
-
