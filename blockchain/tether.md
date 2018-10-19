@@ -24,6 +24,6 @@ Due to the reasons mentioned above, numerous investors have bailed out of Tether
     Most exchanges are crypto-crypto-oriented.
     Involving fiat currency in exchange means dealing with regulations and bank partnerships.
 
-     
+Reference: [link](https://blockexplorer.com/news/what-is-tether/)
     
 
