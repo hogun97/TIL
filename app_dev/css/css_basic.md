@@ -4,15 +4,16 @@
 #pond {
     display: flex;
     justify-content:
+}
 ```
 
 ## Justify-Content
 
 - `flex-start`: justify elements to the left side of the container 
 
-- 'flex-end': justify elements to the right side of the container
+- `flex-end`: justify elements to the right side of the container
 
-- 'center': justify elements to center of the container
+- `center`: justify elements to center of the container
 
 - `space-between`: assigns identical space between each element
 
