@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>TODO List</title>
+</head>
+<body>
+    <div id= "todo">
+        <input v-model="input"
+               v-on:keydown="onKeyDown($event)"
+               type="text"
+               placeholder="TODO를 입력해 주세요">
+        <button v-on:click= "addTODO" type="button">
+            Add
+        </button>
+
+        <div>
+            <ul>
+                <li v-for="todo, index in todos">
+                    <span v-if="todo.updating == false">{{todo.text}}</span>
+
+                    <input v-if="todo.updating == true"
+                           v-model="todos[index].text"
+                           type="text">
+
+                    <button v-on:click="update(todo)"
+                            type="button">
+                        {{todo.updating == true ? 'Done': 'Modify'}}
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var todo = new Vue({
+            el: '#todo',
+            data: {
+                input: "",
+                todos: [],
+            },
+            methods: {
+                addTODO: function() {
+                    if (!this.input) {
+                        alert("TODO를 입력해주세요");
+                        return;
+                    }
+
+                    this.todos.push({
+                        text: this.input,
+                        updating: false,
+                    });
+                },
+                onKeyDown: function(event) {
+                    if(event.keyCode !== 13) {
+                        return;
+                    }
+                    this.addTODO();
+                },
+                update: function(todo) {
+                    todo.updating = !todo.updating;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
