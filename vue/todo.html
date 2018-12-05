@@ -13,10 +13,10 @@
                v-on:keydown="onKeyDown($event)"
                type="text"
                placeholder="TODO를 입력해 주세요">
-        <button v-on:click= "addTODO" type="button">
+        <button v-on:click= "addTODO"  type="button">
             Add
         </button>
-
+        
         <div>
             <ul>
                 <li v-for="todo, index in todos">
@@ -29,6 +29,11 @@
                     <button v-on:click="update(todo)"
                             type="button">
                         {{todo.updating == true ? 'Done': 'Modify'}}
+                    </button>
+
+                    <button v-on:click="remove(todos, index)"
+                            type="button">
+                        x
                     </button>
                 </li>
             </ul>
@@ -53,6 +58,9 @@
                         text: this.input,
                         updating: false,
                     });
+
+                    this.input = "";
+
                 },
                 onKeyDown: function(event) {
                     if(event.keyCode !== 13) {
@@ -60,8 +68,13 @@
                     }
                     this.addTODO();
                 },
+
                 update: function(todo) {
                     todo.updating = !todo.updating;
+                },
+
+                remove: function(todos, index) {
+                    this.todos.splice(index, 1);
                 }
             }
         })
