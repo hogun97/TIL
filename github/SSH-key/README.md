@@ -18,7 +18,7 @@ ssh-keygen -t rsa -b 4096 -C "email_address@gmail.com"
 eval "$(ssh-agent -s)"
 ```
 
-2. Modify your ~/.ssh/config file by adding the following lines
+2. Modify your ~/.ssh/config file by adding the following lines (only in Mac OSX)
 
 ```
 Host *
@@ -30,7 +30,7 @@ Host *
 3. Add your SSH private key to the ssh-agent by pasting the following line
 
 ```
-ssh-add -K ~/.ssh/id_rsa
+ssh-add -k ~/.ssh/id_rsa
 ```
 
 Source: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
