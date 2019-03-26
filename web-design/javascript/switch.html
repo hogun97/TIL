@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Switch-case Practice</title>
+    <script>
+        var game = prompt("가위 바위 보 중 하나를 고르세요", "가위, 바위, 보");
+        var result;
+        switch (game) {
+            case "가위":
+                result="가위";
+                break;
+            case "바위":
+                result="바위";
+                break;
+            case "보":
+                result="보";
+                break;
+            default: result="Undefined"
+        }
+        document.write(result + "를 내셨습니다.");
+    </script>
+</head>
+<body>
+</body>
+</html>
