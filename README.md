@@ -8,11 +8,12 @@ This is a repository that keeps record of what I learned today.
 2. Bash
 3. Blockchain
 4. Github
-5. Go
-6. HTML
-7. JavaScript
-8. Node Package Manager
-9. PHP
-10. Solidity
-11. Test Driven Development
-12. Vue.js
+5. Go Language
+6. MySQL 
+7. Node Package Manager
+8. PHP
+9. Solidity
+10. Test Driven Development
+11. Vue.js
+12. Web-design (html, css, javascript)
+
