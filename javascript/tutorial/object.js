@@ -29,20 +29,40 @@ var database = [
     {
         username: "andy123",
         password: "andypass"
-    }
-]
-
-var newsfeed = [
+    },
     {
         username: "jack12",
-        timeline: "asdasfewf"
+        password: "jackpass"
     },
     {
         username: "bill44",
-        timeline: "ansnsnsns"
+        password: "billpass"
     },
     {
         username: "kim245",
-        timeline: "fwefwefewf"
+        password: "kimpass"
     },
 ]
+
+function signIn(username, password) {
+    if (isUserValid(username, password)) {
+        console.log("Welcome, " + username);
+    } else {
+        console.log("Sorry, wrong username or password");
+    }
+};
+
+function isUserValid(username, password) {
+    for (var i=0; i<database.length; i++) {
+        if(database[i].username === username &&
+            database[i].password === password) {
+                return true;
+        }
+    }
+    return false;
+};
+
+var usernamePrompt = prompt("What is your username?");
+var passwordPrompt = prompt("What is your password?");
+
+signIn(usernamePrompt, passwordPrompt);
