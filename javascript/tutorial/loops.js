@@ -35,3 +35,25 @@ do {
 todos.forEach(function(todo, i) {
     console.log(todo, i);
 })
+
+// More on Loops
+const basket = ['apples', 'oranges', 'grapes'];
+const detailedBasket = {
+    apples: 5,
+    oranges: 10,
+    grapes: 1000
+}
+
+// For of loop
+// Iterating - action of looping over something
+// Iterable - 'something' that gets looped over (arrays, string)
+for (item of basket) {
+    console.log(item);
+}
+
+// For in loop - allows us to loop over properties in an object
+// Enumerating
+// Enumerable - properties in an object
+for (item in detailedBasket) {
+    console.log(item);
+}
