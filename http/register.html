@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+</head>
+<body>
+    <!-- Use GET, not POST -->
+    <form method="GET">
+        First Name: <input type="text" name="firstname"> <br>
+        Last Name: <input type="text" name="lastname"> <br>
+        Email: <input type="email" name="email"> <br>
+        Password: <input type="password" min="5" name="password"> <br>
+        Birthday: <input type="date" name="birthday"> <br>
+        Gender: <br>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female"> Female <br>
+        Pets: <br>
+        <input type="checkbox" name="pet" value="cat">Cat <br>
+        <input type="checkbox"name="pet" value="dog">Dog <br>
+        Cars: <br>
+        <select name="cars">
+            <option name="cars" value="volvo">Volvo</option>
+            <option name="cars" value="audi">Audi</option>
+            <option name="cars" value="benz">Benz</option>
+            <option name="cars" value="bmw">BMW</option>
+        </select><br>
+        <input type="submit" value="Register!">
+        <input type="reset">
+    </form>
+</body>
+</html>
+
