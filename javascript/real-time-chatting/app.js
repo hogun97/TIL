@@ -35,14 +35,29 @@ app.get('/', function(request, response) {
 })
 
 io.sockets.on('connection', function(socket) {
-    console.log('A user connected')
+    socket.on('newUser', function(name) {
+        console.log(name + ' has connected.')
+        socket.name = name
+        io.sockets.emit('update', {
+            type: 'connect',
+            name: 'SERVER',
+            message: name + ' has connected.'
+        })
+    })
 
-    socket.on('send', function(data) {
-        console.log('Delivered message:', data.msg)
+    socket.on('message', function(data) {
+        data.name = socket.name
+        console.log(data)
+        socket.broadcast.emit('update', data);
     })
 
     socket.on('disconnect', function() {
-        console.log('A user disconnected')
+        console.log(socket.name + ' has disconnected.')
+        socket.broadcast.emit('update', {
+            type: 'disconnect',
+            name: 'SERVER',
+            message: socket.name + ' has disconnected.'
+        })
     })
 })
 

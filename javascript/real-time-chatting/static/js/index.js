@@ -2,8 +2,17 @@ let socket = io()
 
 // Called when a socket connects
 socket.on('connect', function() {
-    let input = document.getElementById('test')
-    input.value = 'Connected'
+    let name = prompt('Welcome! What is your name?')
+
+    if(!name) {
+        name = "Anonymous"
+    }
+
+    socket.emit('newUser', name)
+})
+
+socket.on('update', function(data) {
+    console.log(`${data.name}: ${data.message}`)
 })
 
 // Create send function since it's not a default socket.io function
@@ -15,5 +24,5 @@ function send() {
     document.getElementById('test').value = ''
 
     // Deliver data and send event to server
-    socket.emit('send', {msg: message})
+    socket.emit('message', {type: 'message', message: message})
 }
