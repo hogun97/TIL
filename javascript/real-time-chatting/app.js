@@ -15,6 +15,9 @@ const server = http.createServer(app)
 // Bind server to socket.io
 const io = socket(server)
 
+// Define port number
+const port = 8080
+
 app.use('/css', express.static('./static/css'))
 app.use('/js', express.static('./static/js'))
 
@@ -31,7 +34,19 @@ app.get('/', function(request, response) {
     })
 })
 
+io.sockets.on('connection', function(socket) {
+    console.log('A user connected')
+
+    socket.on('send', function(data) {
+        console.log('Delivered message:', data.msg)
+    })
+
+    socket.on('disconnect', function() {
+        console.log('A user disconnected')
+    })
+})
+
 // Maker server listen to port 8080
-server.listen(8080, function() {
-    console.log('Listening to port 8080...')
+server.listen(port, function() {
+    console.log('Listening to ' + port + '...')
 })
