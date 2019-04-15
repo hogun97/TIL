@@ -27,3 +27,29 @@ app.get('/', function(req, res) {
 })
 ```
 
+4. Static files: use middleware to utilize static files (.js and .css)
+Ex) External clients can access css and js files under the provided directory path.
+```js
+app.use('/css', express.static('./static/css'))
+app.use('/js', express.static('./static/js'))
+```
+
+5. `fs` modules: default module in Node JS that processes any file-related execution
+    - `readFile()`: reads file and brings data in `response` object
+    - `response`
+        + `writeHead`: indicate the file type of the data
+        Ex) Indicate that we are trying to respond with an html file.
+        ```js
+        response.writeHead(200, {'Content-Type': 'text/html'})
+        ```
+        + `write`: send data
+        Ex) Send the html file.
+        ```js
+        response.write(data)
+        ```
+        + `end`: indicate completion
+        Ex) Indicate that the html file has been sent - reached completion.
+        ```js
+        response.end()
+        ```
+        
