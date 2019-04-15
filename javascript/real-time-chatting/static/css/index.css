@@ -1,6 +1,6 @@
 #main {
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
     border-radius: 20px;
     background-color: lightblue;
     text-align: center;
@@ -14,7 +14,7 @@
 }
 
 .connect {
-    width: 90%;
+    width: 95%;
     margin: auto;
     background-color: aquamarine;
     text-align: center;
@@ -22,7 +22,7 @@
 }
 
 .disconnect {
-    width: 90%;
+    width: 95%;
     margin: auto;
     background-color: indianred;
     text-align: center;
@@ -33,14 +33,18 @@
     width: 90%;
     margin: auto;
     background-color: lemonchiffon;
+    text-align: right;
     border-radius: 5px;
     margin-top: 10px;
+    padding-right: 20px;
 }
 
 .other {
     width: 90%;
     margin: auto;
     background-color: white;
+    text-align: left;
     border-radius: 5px;
     margin-top: 10px;
+    padding-left: 20px;
 }
