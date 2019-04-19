@@ -40,6 +40,27 @@ header.startup h1 {
   font-size: 2rem;
 }
 
+.nav-bar {
+  background-color: white;
+}
+
+.nav-bar a {
+  float: left;
+  color: navy;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav-bar a:hover {
+  background-color: grey;
+}
+
+.nav-bar a.active {
+  background-color: beige;
+}
+
 .faded {
   color: rgba(255, 255, 255, 0.8);
 }
