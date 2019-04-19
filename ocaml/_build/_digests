@@ -1,4 +1,8 @@
 "Rule: ocaml: ml -> cmo & cmi (%=hello )": "Ke\254\218\017\214\129,\211\236\157\246p'\b\006"
+"Resource: /Users/ihogeon/TIL/ocaml/mycode.ml": "\130\195\000\187;\t\\\bk>{\142\024\017qV"
 "Rule: ocaml dependencies ml (%=hello )": "?\127 '\027m\211\218\144\237\247\005n\218\000\255"
 "Rule: ocaml: cmo* -> byte (%=hello )": "\140\028\024F}\b\191\163q`\217\179R\183\213|"
+"Rule: ocaml dependencies ml (%=mycode )": "\"\196\224t@,\180+\229\143\157\195\243~#\167"
 "Resource: /Users/ihogeon/TIL/ocaml/hello.ml": "\190AS76\160x\024\202\192\179\205\220\157\029h"
+"Rule: ocaml: ml -> cmo & cmi (%=mycode )": "KZ\130]\161\162\172\214<\190\148%\219\224\189\156"
+"Rule: ocaml: cmo* -> byte (%=mycode )": "\195\224e\133\0248\021\253\197\141%\236\138X\217\215"

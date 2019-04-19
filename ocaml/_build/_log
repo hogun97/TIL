@@ -1,8 +1,8 @@
 ### Starting build.
-# Target: hello.ml.depends, tags: { extension:ml, file:hello.ml, ocaml, ocamldep, quiet }
-ocamldep.opt -modules hello.ml > hello.ml.depends
-# Target: hello.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:hello.cmo, file:hello.ml, implem, ocaml, quiet }
-ocamlc.opt -c -o hello.cmo hello.ml
-# Target: hello.byte, tags: { byte, dont_link_with, extension:byte, file:hello.byte, link, ocaml, program, quiet }
-ocamlc.opt hello.cmo -o hello.byte
+# Target: mycode.ml.depends, tags: { extension:ml, file:mycode.ml, ocaml, ocamldep, quiet }
+ocamldep.opt -modules mycode.ml > mycode.ml.depends
+# Target: mycode.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:mycode.cmo, file:mycode.ml, implem, ocaml, quiet }
+ocamlc.opt -c -o mycode.cmo mycode.ml
+# Target: mycode.byte, tags: { byte, dont_link_with, extension:byte, file:mycode.byte, link, ocaml, program, quiet }
+ocamlc.opt mycode.cmo -o mycode.byte
 # Compilation successful.
