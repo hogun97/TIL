@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conditionals</title>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(ingredient, i) in ingredients" v-bind="ingredient">{{ ingredient }} ({{i}})</li>
+        </ul>
+        <button @click="ingredients.push('spices')">Add New</button>
+        <hr>
+        <ul>
+            <li v-for="person in persons">
+                <div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+            </li>
+
+        </ul>
+        <div v-for="n in 10">{{ n }}</div>
+        <hr>
+        <template v-for="(ingredient, index) in ingredients">
+            <h1>{{ ingredient }}</h1>
+            <p>{{ index }}</p>
+        </template>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            ingredients: ['meat', 'fruit', 'cookies'],
+            persons: [
+                {Name: 'Max', Age: 27, Color: 'Red'},
+                {Name: 'Anna', Age: 21, Color: 'Blue'}
+            ]
+        }
+    })
+</script>
+</html>

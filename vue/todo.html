@@ -1,42 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>TODO List</title>
+    <style>
+        .center {
+            height: 200px;
+            position: relative;
+            border: 3px solid darkblue;
+            background-color: aqua;
+        }
+
+        .center div {
+            margin: 0;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .border {
+            border: 1px solid darkblue;
+        }
+
+    </style>
 </head>
+
 <body>
-    <div id= "todo">
-        <input v-model="input"
-               v-on:keydown="onKeyDown($event)"
-               type="text"
-               placeholder="TODO를 입력해 주세요">
-        <button v-on:click= "addTODO"  type="button">
-            Add
-        </button>
-        
-        <div>
-            <ul>
-                <li v-for="todo, index in todos">
-                    <span v-if="todo.updating == false">{{todo.text}}</span>
+    <div class="container">
+        <div class="center">
+            <div id="todo">
+                <input v-model="input"
+                    v-on:keydown="onKeyDown($event)"
+                    type="text"
+                    class="input-group-text"
+                    id="inputGroup-sizing-default"
+                    placeholder="TODO를 입력해 주세요">
+                <button v-on:click="addTODO"
+                        type="button"
+                        class="btn btn-outline-primary">
+                    +
+                </button>
 
-                    <input v-if="todo.updating == true"
-                           v-model="todos[index].text"
-                           type="text">
+                <div>
+                    <ul>
+                        <li v-for="todo, index in todos">
+                            <span v-if="todo.updating == false">{{todo.text}}</span>
 
-                    <button v-on:click="update(todo)"
-                            type="button">
-                        {{todo.updating == true ? 'Done': 'Modify'}}
-                    </button>
+                            <input v-if="todo.updating == true" v-model="todos[index].text" type="text">
 
-                    <button v-on:click="remove(todos, index)"
-                            type="button">
-                        x
-                    </button>
-                </li>
-            </ul>
+                            <button v-on:click="update(todo)" type="button">
+                                {{todo.updating == true ? 'Done': 'Modify'}}
+                            </button>
+
+                            <button v-on:click="remove(todos, index)" type="button">
+                                x
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -48,7 +76,7 @@
                 todos: [],
             },
             methods: {
-                addTODO: function() {
+                addTODO: function () {
                     if (!this.input) {
                         alert("TODO를 입력해주세요");
                         return;
@@ -62,22 +90,23 @@
                     this.input = "";
 
                 },
-                onKeyDown: function(event) {
-                    if(event.keyCode !== 13) {
+                onKeyDown: function (event) {
+                    if (event.keyCode !== 13) {
                         return;
                     }
                     this.addTODO();
                 },
 
-                update: function(todo) {
+                update: function (todo) {
                     todo.updating = !todo.updating;
                 },
 
-                remove: function(todos, index) {
+                remove: function (todos, index) {
                     this.todos.splice(index, 1);
                 }
             }
         })
     </script>
 </body>
+
 </html>
