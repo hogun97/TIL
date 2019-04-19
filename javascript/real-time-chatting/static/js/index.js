@@ -55,3 +55,10 @@ function send() {
     // Deliver data and send event to server
     socket.emit('message', {type: 'message', message: message})
 }
+
+function sendOnEnter(event) {
+    let key = event.which || event.keyCode;
+    if (key == 13) {
+        send();
+    }
+}

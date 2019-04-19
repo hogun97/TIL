@@ -13,6 +13,10 @@
     width: 100%;
 }
 
+input.margin {
+    margin-top: 30px;
+}
+
 .connect {
     width: 95%;
     margin: auto;
@@ -47,4 +51,8 @@
     border-radius: 5px;
     margin-top: 10px;
     padding-left: 20px;
+}
+
+div.scrollingDiv {
+    overflow: scroll;
 }

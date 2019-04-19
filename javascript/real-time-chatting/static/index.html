@@ -9,12 +9,12 @@
 </head>
 <body>
     <div id="main">
-        <div id="chat">
+        <div class="scrollingDiv" id="chat">
 
         </div>
         <div>
-            <input type="text" id="test" placeholder="Enter your message...">
-            <button onclick="send()">Send</button>
+            <input type="text" id="test" placeholder="Enter your message..." class="margin">
+            <button onkeydown="sendOnEnter(event)" onclick="send()">Send</button>
         </div>
     </div>
 </body>
