@@ -1,4 +1,6 @@
-# Function Definitions
+# Function
+
+## Function Definitions
 
 ```ocaml
 let f x = ...
@@ -71,3 +73,70 @@ Therefore, there are no dynamic semantics.
 - Non-recursive: if by assuming that `x1:t1` and `x2:t2` and ... and `xn:tn`, we can conclude that `e:u`, then `f : t1 -> t2 -> ... -> tn -> u`.
 
 - Recursive: if by assuming that `x1:t1` and `x2:t2` and ... and `xn:tn` and `f : t1 -> t2 -> ... -> tn -> u`, we can conclude that `e:u`, then `f : t1 -> t2 -> ... -> tn -> u`.
+
+## Anonymous Functions
+
+We can have values that are not bound to names.
+
+```ocaml
+# 42;;
+- : int = 42
+```
+
+Similar to variables, functions in OCaml can also be anonymous.<br>
+In `fun x -> x + 1`,
+- `fun` indicates that the function is anonymous
+- `x` is the argument
+- `->` separates the argument from the body
+
+With `->`, we have two ways of writing a function:
+```ocaml
+let inc x = x + 1
+let inc = fun x -> x + 1
+```
+The two ways above are _syntactically_ different but _semantically_ identical.
+
+__Syntax__
+```ocaml
+fun x1 ... xn -> e
+```
+
+__Static semantics__
+
+If by assuming that `x1:t1` and `x2:t2` and ... and `xn:tn`, we can conclude that `e:u`, then `fun x1 ... xn -> e : t1 -> t2 -> ... -> tn -> u`.
+
+__Dynamic semantics__
+
+An anoymous function is already a value. There is no computation to be performed.
+
+## Function Application
+
+__Syntax__
+```ocaml
+e0 e1 e2 ... en
+```
+
+__Static semantics__
+
+If `e0 : t1 -> ... -> tn -> u` and `e1:t1` and ... and `en:tn` then `e0 e1 ... en : u`.
+
+__Dynamic semantics__
+
+To evalue `e0 e1 ... en`;
+
+1. Evaluate `e0` to a function. Also evaluate the argument expression `e1` through `en` to values `v1` through `vn`.
+
+    For `e0`, the result might be an anonymous function `fun x1 ... xn -> e`. Or it might be a name `f`, and we have to find the definition of `f`, in which cas let's assume that definition is `let rec f x1 ... xn = e`. Either way, we now know the argument names `x1` through `xn` and the body `e`.
+
+2. Substitute each value `vi` for the corresponding argument name `xi` in the body `e` of the function. That results in a new expression `e'`.
+3. Evaluate `e'` to a value `v`, which is the result of evaluating `e0 e1 ... en`.
+
+__Pipeline__
+
+Pipelines are useful when you have a big chain of function applications.
+
+```ocaml
+5 |> inc |> square |> inc |> inc |> square
+square (inc (inc (square (inc 5))))
+```
+Both lines of code will return the same value but the former is easier to follow through linearly.
