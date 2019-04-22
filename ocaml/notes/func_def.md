@@ -140,3 +140,17 @@ Pipelines are useful when you have a big chain of function applications.
 square (inc (inc (square (inc 5))))
 ```
 Both lines of code will return the same value but the former is easier to follow through linearly.
+
+
+## Polymorphic Functions
+
+Polymorphic functions are functions that can be applied to many(_poly_) types(_morph_) of values.
+
+```ocaml
+# let id x = x;;
+id : 'a -> 'a = <fun>
+```
+Above is an identity function - a function that returns the argument.
+Here, `'a` returns `'a`. `'a` in OCaml represents a type variable - it stands for an unknown type.
+
+In Ocaml, we usually use `'a`, `'b`, and `'c` and refer to them as alpha, beta, and gamma.
