@@ -116,3 +116,36 @@ ocaml
 inc 3;;
 - : int = 4
 ```
+
+## Printing
+
+`print_int`
+`print_string`
+`print_float`
+`print_endline`
+
+The type for printing statements is `unit`.
+
+`unit` evaluates to `()` only.
+
+```ocaml
+print_endline "THIS";
+print_endline "IS";
+print_endline "3110";;
+```
+
+In this case, `e1; e2` will evaluate `e1` to `()`, discard that value, and evaluate `e2`. This is because `e1` and `e2` both have `unit` as type.
+
+However, if `e1` does not have type `unit`, it will throw a warning - whether the value should be ignored or not.
+
+```ocaml
+# 3; 5;;
+Warning 10: this expression should have type unit
+- : int = 5
+```
+
+If that is the case, add `ignore` keyword.
+```ocaml
+# ignore 3; 5;;
+- : int = 5
+```
