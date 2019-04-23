@@ -2,5 +2,8 @@
 
 ## Contents
 
++ Arguments
 + Basics
-+ If expressions
++ Expression
++ Function
++ Function2
