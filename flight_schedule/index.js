@@ -1,9 +1,11 @@
-let request = require('request');
-let cheerio = require('cheerio');
+import request from 'request';
+import cheerio from 'cheerio';
+
+// let request = require('request');
+// let cheerio = require('cheerio');
 
 // Rest API Path
-
-const url = 'http://openapi.airport.kr/openapi/service/';
+const url = "http://openapi.airport.kr/openapi/service/StatusOfPassengerFlights/getPassengerArrivals";
 
 // Issued API Key
 const key = 'sU4OpaoIxSzS2lAho76iBWqAgGX%2FNL3dJvKeVMpCuJH%2F3GyguGqw3Fdd2Gh2OKMY7vDIYewVXeKaP52uWqdiSQ%3D%3D';
@@ -12,7 +14,7 @@ const key = 'sU4OpaoIxSzS2lAho76iBWqAgGX%2FNL3dJvKeVMpCuJH%2F3GyguGqw3Fdd2Gh2OKM
 
 function getFlightId(){
     return new Promise((resolve) => {
-        request("http://openapi.airport.kr/openapi/service/StatusOfPassengerFlights/getPassengerArrivals"+"?serviceKey="+key, function(err, res, body) {
+        request(url+"?serviceKey="+key, function(err, res, body) {
             if (!err && res.statusCode == 200) {
                 let $ = cheerio.load(body)
                 $('flightId').each(function(i, arrivals) {

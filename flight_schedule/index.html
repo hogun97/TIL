@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Schedule</title>
+    <!-- <script type="text/javascript" src="app.js"></script> -->
+    <script>
+        const url = "http://openapi.airport.kr/openapi/service/StatusOfPassengerFlights/getPassengerArrivals?serviceKey=sU4OpaoIxSzS2lAho76iBWqAgGX%2FNL3dJvKeVMpCuJH%2F3GyguGqw3Fdd2Gh2OKMY7vDIYewVXeKaP52uWqdiSQ%3D%3D"
+        function getFlightId() {
+            fetch("http://localhost:8080/"+ url)
+                .then(res => res.text())
+                .then(data => {
+                    console.log(data)
+                })
+        }
+    </script>
+</head>
+<body>
+    <h1>Flight Schedule</h1>
+    <button type="button" onclick="getFlightId()">Display All Flights</button>
+    <hr>
+</body>
+</html>
