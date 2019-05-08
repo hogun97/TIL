@@ -1,0 +1,40 @@
+.topnav {
+    background-color: rgb(9, 14, 164, 0.25);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav div {
+    float: right;
+}
+
+.topnav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.topnav div:hover {
+    background-color: white;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: skyblue;
+    color: white;
+}
+
+.topnav div.active {
+    background-color: skyblue;
+    color: white;
+}
