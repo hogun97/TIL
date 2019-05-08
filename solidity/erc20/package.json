@@ -1,0 +1,15 @@
+{
+  "name": "erc20",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ganache-cli": "^6.4.3",
+    "truffle": "^5.0.15"
+  }
+}
